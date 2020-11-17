@@ -1,0 +1,69 @@
+#include<stdio.h>
+float add(float x,float y);
+float min(float x,float y);
+float mul(float x,float y);
+float div(float x,float y);
+
+float add(float x,float y)
+{
+    return x+y;
+}
+float min(float x,float y)
+{
+    return x-y;
+}
+float mul(float x,float y)
+{
+    return x*y;
+}
+float div(float x,float y)
+{
+    return x/y;
+}
+
+
+int main()
+{
+    float x,y,sum;
+    char op,choice='y';
+    
+    while (choice=='y')
+    {
+        printf("Enter the first operand: ");
+        scanf("%f",&x);
+        printf("Enter the second operand: ");
+        scanf("%f",&y);
+
+        printf("Enter the operation: ");
+        scanf(" %c",&op);
+
+        if (op == '+')    
+        {
+            sum=add(x,y);
+            printf("The sum is: %f\n", sum);
+        }
+        else if (op == '-')
+        {
+            sum=min(x,y);
+            printf("The difference is: %f\n", sum);
+        }
+        else if (op == '*')
+        {
+            sum=mul(x,y);
+            printf("The product is: %f\n", sum);
+        }
+        else if (op == '/')
+        {
+            sum=div(x,y);
+            printf("The quotient is: %f\n", sum);
+        }
+        else 
+        {
+            printf("Wrong input\n");
+        } 
+        printf("Do you want to run again?Y for yes and N for no: ");
+        scanf(" %c",&choice);
+
+        }
+    return 0;
+}
